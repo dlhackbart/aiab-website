@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Automated Bookkeeping | Simple Business, Simple Price</title>
+    <meta name="description" content="AI-powered bookkeeping with QuickBooks-quality reports. Starting at $99/month. See your first month FREE before you pay.">
+    <meta name="keywords" content="bookkeeping, small business, AI bookkeeping, affordable bookkeeper, QuickBooks, San Diego">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            padding: 20px 40px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            font-weight: 400;
+            opacity: 0.7;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        .nav-cta {
+            background: #10b981;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            opacity: 1 !important;
+        }
+
+        .nav-cta:hover {
+            background: #059669;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: white;
+            padding: 140px 20px 80px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #10b981;
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .hero-proof {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .hero-proof span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Free Preview Banner */
+        .free-preview {
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .free-preview-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .free-preview h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .free-preview p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: #f8fafb;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0f2027, #2c5364);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature {
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s;
+        }
+
+        .feature:hover {
+            border-color: #10b981;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: #f8fafb;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #10b981;
+        }
+
+        .pricing-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .pricing-card.featured .price {
+            color: #10b981;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #888;
+        }
+
+        .pricing-card .price-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .pricing-card li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            color: #444;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Special Offers */
+        .offers {
+            background: white;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .offer-card {
+            padding: 40px;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-card.preview {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid #10b981;
+        }
+
+        .offer-card.switcher {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 2px solid #3b82f6;
+        }
+
+        .offer-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .offer-card.preview .offer-badge {
+            background: #10b981;
+            color: white;
+        }
+
+        .offer-card.switcher .offer-badge {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .offer-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .offer-card p {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Not For You Section */
+        .not-for-you {
+            background: #fef2f2;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .not-for-you h3 {
+            color: #991b1b;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .not-for-you ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .not-for-you li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+        }
+
+        .not-for-you li::before {
+            content: "✕";
+            position: absolute;
+            left: 0;
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.25rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section .btn-primary {
+            font-size: 1.1rem;
+            padding: 16px 32px;
+        }
+
+        .cta-contact {
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+
+        .cta-contact a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .cta-contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f2027;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #10b981;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.85rem;
+            }
+
+            .hero-sub {
+                font-size: 1.1rem;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .not-for-you ul {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            AI AUTOMATED BOOKKEEPING
+            <div class="logo-sub">SIMPLE BUSINESS. SIMPLE PRICE.</div>
+        </div>
+        <nav>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#offers">Special Offers</a>
+            <a href="mailto:hello@aiautomatedbookkeeping.com" class="nav-cta">Get Started</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">AI-Powered Bookkeeping</div>
+            <h1>QuickBooks-Quality Reports.<br><span>Starting at $99/month.</span></h1>
+            <p class="hero-sub">We use AI to categorize your transactions automatically. You just answer a few questions. Your books are always tax-ready.</p>
+            <div class="hero-cta">
+                <a href="mailto:hello@aiautomatedbookkeeping.com?subject=I want to see my first month FREE" class="btn btn-primary">See Your First Month FREE</a>
+                <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+            </div>
+            <div class="hero-proof">
+                <span>&#10003; No contracts</span>
+                <span>&#10003; Cancel anytime</span>
+                <span>&#10003; QuickBooks reports</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="free-preview">
+        <div class="free-preview-content">
+            <div>
+                <h3>See Your First P&L Before You Pay Anything</h3>
+                <p>We do the work. You see the results. Then you decide.</p>
+            </div>
+            <a href="mailto:hello@aiautomatedbookkeeping.com?subject=Free Preview Request" class="btn btn-secondary" style="border-color: white;">Request Free Preview</a>
+        </div>
+    </div>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Four simple steps to tax-ready books every month</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Connect</h3>
+                    <p>Link your bank accounts through our secure portal. We get read-only access.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Categorize</h3>
+                    <p>Our AI automatically categorizes 90%+ of your transactions. No manual data entry.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>You Confirm</h3>
+                    <p>Answer a few quick questions about unclear items. Usually takes 5 minutes or less.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Reports Delivered</h3>
+                    <p>Get your monthly P&L and Balance Sheet in your portal. Hand year-end to your CPA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>What's Included</h2>
+                <p>Everything you need for tax-ready books, nothing you don't</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">&#128202;</div>
+                    <h3>Monthly P&L Statement</h3>
+                    <p>See exactly where your money went. Revenue, expenses, net profit - all categorized.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#128200;</div>
+                    <h3>Monthly Balance Sheet</h3>
+                    <p>Know your financial position. Assets, liabilities, and equity at a glance.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#129302;</div>
+                    <h3>AI Categorization</h3>
+                    <p>Our AI learns your business and categorizes transactions automatically. No spreadsheets.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#128187;</div>
+                    <h3>Your Own Portal</h3>
+                    <p>Upload documents, view reports, pay invoices - all in one place, anytime.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#128176;</div>
+                    <h3>1099 Tracking</h3>
+                    <p>We track contractor payments so you're ready when 1099 time comes.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">&#128230;</div>
+                    <h3>Year-End Package</h3>
+                    <p>Hand your CPA a complete package. No scrambling at tax time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple Pricing</h2>
+                <p>Choose the level of access that's right for you</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <h3>Standard</h3>
+                    <div class="price">$99<span>/month</span></div>
+                    <p class="price-note">Up to 3 bank/credit card accounts included</p>
+                    <ul>
+                        <li>AI-powered transaction categorization</li>
+                        <li>Monthly Profit & Loss statement</li>
+                        <li>Monthly Balance Sheet</li>
+                        <li>Your own client portal</li>
+                        <li>1099 contractor tracking</li>
+                        <li>Year-end tax package</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="mailto:hello@aiautomatedbookkeeping.com?subject=Standard Plan Inquiry" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Full Detail</h3>
+                    <div class="price">$149<span>/month</span></div>
+                    <p class="price-note">For those who want to see everything</p>
+                    <ul>
+                        <li>Everything in Standard, plus:</li>
+                        <li>Direct QuickBooks login access</li>
+                        <li>Full General Ledger</li>
+                        <li>Transaction-level detail</li>
+                        <li>View your books anytime</li>
+                        <li>Perfect for hands-on owners</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="mailto:hello@aiautomatedbookkeeping.com?subject=Full Detail Plan Inquiry" class="btn btn-secondary" style="border-color: #1a1a1a; color: #1a1a1a;">Get Started</a>
+                </div>
+            </div>
+            <p class="pricing-note">Additional bank or credit card accounts: $10/month each</p>
+
+            <div class="not-for-you">
+                <h3>We're Not the Right Fit If:</h3>
+                <ul>
+                    <li>You have inventory to track</li>
+                    <li>You need payroll processing</li>
+                    <li>You have multiple business entities</li>
+                    <li>Over 200 transactions per month</li>
+                    <li>You need invoicing or A/R</li>
+                    <li>Complex financial situations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="offers" id="offers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Special Offers</h2>
+                <p>We reward easy onboarders and confident decision-makers</p>
+            </div>
+            <div class="offers-grid">
+                <div class="offer-card preview">
+                    <div class="offer-badge">FREE PREVIEW</div>
+                    <h3>See Your First Month Before You Pay</h3>
+                    <p>We'll do your first month's bookkeeping completely. You'll see your full P&L and Balance Sheet. Then you decide if you want to subscribe.</p>
+                    <p style="margin-top: 15px;"><strong>No commitment. No risk. Just results.</strong></p>
+                </div>
+                <div class="offer-card switcher">
+                    <div class="offer-badge">SWITCHER SPECIAL</div>
+                    <h3>First Month FREE for Up-to-Date Books</h3>
+                    <p>Switching from another bookkeeper? If your current books are up to date and accurate, your first month with us is completely free.</p>
+                    <p style="margin-top: 15px;"><strong>We reward clients who make our job easy.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Simplify Your Books?</h2>
+            <p>See your first month FREE. No commitment required.</p>
+            <a href="mailto:hello@aiautomatedbookkeeping.com?subject=I want to get started" class="btn btn-primary">Get Started Today</a>
+            <div class="cta-contact">
+                <p>Questions? Email us at <a href="mailto:hello@aiautomatedbookkeeping.com">hello@aiautomatedbookkeeping.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">AI Automated Bookkeeping</div>
+            <p>Simple bookkeeping for simple businesses.</p>
+            <p>Del Mar, California</p>
+            <p style="margin-top: 20px;"><a href="mailto:hello@aiautomatedbookkeeping.com">hello@aiautomatedbookkeeping.com</a></p>
+            <p style="margin-top: 30px; font-size: 0.8rem;">&copy; 2026 AI Automated Bookkeeping. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

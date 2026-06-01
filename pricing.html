@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | AI Automated Bookkeeping</title>
+    <meta name="description" content="See if you qualify for our discounted bookkeeping rate.">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            background: #f8fafa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a3a3a 0%, #2d5a5a 100%);
+            padding: 30px 40px;
+        }
+
+        .logo {
+            display: inline-block;
+            color: white;
+        }
+
+        .logo-line {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .logo-text {
+            display: flex;
+            justify-content: space-between;
+            width: 160px;
+        }
+
+        .logo-text span {
+            display: inline-block;
+        }
+
+        .logo-pencil {
+            font-size: 0.75rem;
+            opacity: 0.6;
+            margin-left: 8px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #1a3a3a;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .pricing-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .pricing-box.discount {
+            border: 3px solid #2d5a5a;
+        }
+
+        .pricing-box h2 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .pricing-box.discount h2 {
+            color: #2d5a5a;
+        }
+
+        .pricing-box.standard h2 {
+            color: #555;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #888;
+        }
+
+        .pricing-box.discount .price {
+            color: #2d5a5a;
+        }
+
+        .pricing-box ul {
+            list-style: none;
+        }
+
+        .pricing-box li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pricing-box li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-box.discount li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2d5a5a;
+            font-weight: bold;
+        }
+
+        .pricing-box.standard li:before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: #888;
+        }
+
+        .no-fit {
+            background: #fff5f5;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 4px solid #c44;
+        }
+
+        .no-fit h3 {
+            color: #a33;
+            margin-bottom: 15px;
+        }
+
+        .no-fit ul {
+            list-style: none;
+        }
+
+        .no-fit li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+        }
+
+        .no-fit li:before {
+            content: "✕";
+            position: absolute;
+            left: 0;
+            color: #c44;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .cta p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .cta a {
+            color: #1a3a3a;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 700px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-line"><span class="logo-text"><span>A</span><span>I</span><span>&nbsp;</span><span>A</span><span>U</span><span>T</span><span>O</span><span>M</span><span>A</span><span>T</span><span>E</span><span>D</span></span></div>
+            <div class="logo-line"><span class="logo-text"><span>B</span><span>O</span><span>O</span><span>K</span><span>K</span><span>E</span><span>E</span><span>P</span><span>I</span><span>N</span><span>G</span></span><span class="logo-pencil">&#9998;</span></div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Pricing</h1>
+        <p class="intro">We offer discounted pricing for businesses that keep things simple. See which tier fits you.</p>
+
+        <div class="pricing-grid">
+            <div class="pricing-box discount">
+                <h2>Discounted Rate</h2>
+                <div class="price">$89<small>/month</small></div>
+                <p style="margin-bottom:20px; color:#555;">You qualify if:</p>
+                <ul>
+                    <li>Under 100 transactions per month</li>
+                    <li>1-2 bank accounts and credit cards total</li>
+                    <li>Respond to questions within 5 business days</li>
+                    <li>Keep business and personal expenses separate</li>
+                    <li>No inventory tracking needed</li>
+                </ul>
+            </div>
+
+            <div class="pricing-box standard">
+                <h2>Standard Rate</h2>
+                <div class="price">$139<small>/month</small></div>
+                <p style="margin-bottom:20px; color:#555;">What we do for you:</p>
+                <ul>
+                    <li>Up to 200 transactions per month</li>
+                    <li>Up to 4 bank accounts and credit cards total</li>
+                    <li>Monthly transaction categorization</li>
+                    <li>Monthly Profit & Loss statement</li>
+                    <li>Monthly Balance Sheet</li>
+                    <li>Year-end package for your tax preparer</li>
+                    <li>1099 tracking for contractors</li>
+                    <li>Client portal with complete access to reports, easy client review, and more</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="no-fit">
+            <h3>We're Not the Right Fit If:</h3>
+            <ul>
+                <li>You have retail or e-commerce with inventory</li>
+                <li>You need payroll processing</li>
+                <li>You need invoicing or bill pay services</li>
+                <li>You have multiple business entities</li>
+                <li>You have complex financial situations</li>
+                <li>More than 200 transactions per month</li>
+                <li>More than 4 total accounts</li>
+            </ul>
+        </div>
+
+        <div class="cta">
+            <p>Questions? See if you qualify.</p>
+            <a href="mailto:hello@aiautomatedbookkeeping.com">hello@aiautomatedbookkeeping.com</a>
+        </div>
+    </div>
+
+    <footer>AIAutomatedBookkeeping.com</footer>
+</body>
+</html>
